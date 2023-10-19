@@ -1,10 +1,9 @@
 <script>
 export default {
-  data() {
-    return {
-      msg: {
-        type: String
-      }
+  props: {
+    msg: {
+      type: String,
+      required: true
     }
   }
 }
@@ -12,6 +11,7 @@ export default {
 
 <template>
   <div class="greetings">
+    <!-- Testing Component Implementations -->
     <h1 class="green">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with

@@ -1,8 +1,8 @@
 <script>
-// import child component
+// importing child components
 import HelloWorld from '../components/HelloWorld.vue'
 export default {
-  // register child component
+  // registering child components
   components: {
     HelloWorld
   },
@@ -17,13 +17,13 @@ export default {
 <template>
   <main>
     <div class="wrapper">   
-      <HelloWorld msg/>
+      <HelloWorld :msg="msg"/>
     </div>
   </main>
 </template>
 
 
 <style>
-  /* default styling */
+  /* Bootstrap styling */
   @import "../assets/base.css";
 </style>

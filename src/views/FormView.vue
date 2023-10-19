@@ -7,27 +7,43 @@
             <form @submit.prevent="handleUpdateForm">
                 <div class="form-group">
                     <label>Location*</label>
-                    <input type="text" class="form-control" required>
+                    <input v-model="Location" type="location" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label>Query Start Date*</label>
-                    <input type="date" class="form-control" required>
+                    <input v-model="startDate" type="date" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label>Query End Date*</label>
-                    <input type="date" class="form-control" required>
+                    <input v-model="endDate" type="date" class="form-control" required>
                 </div>
 
-                <button class="btn btn-danger mt-3">Get Data</button>
+                <button class="btn btn-danger mt-3">Get Weather Data :D</button>
             </form>
         </div>
     </div>
 </template>
 
 <script>
-  export default {
-    name: 'FormView',
-}
+import WeatherData from "../components/WeatherData.vue"
+
+export default {
+  data() {
+    return {
+      location: '',
+      startDate: '',
+      endDate: ''
+    };
+  },
+  methods: {
+    async submitForm() {
+      // We will implement this in the next steps.
+    }
+  },
+  components: {
+    WeatherData
+  }
+};
 </script>
