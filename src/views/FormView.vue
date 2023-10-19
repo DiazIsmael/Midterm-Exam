@@ -27,7 +27,8 @@
 </template>
 
 <script>
-import WeatherData from "../components/WeatherData.vue"
+import axios from "axios";
+import WeatherData from "../components/WeatherData.vue";
 
 export default {
   data() {
@@ -39,7 +40,7 @@ export default {
   },
   methods: {
     async submitForm() {
-      // We will implement this in the next steps.
+      // working on ir
     }
   },
   components: {
