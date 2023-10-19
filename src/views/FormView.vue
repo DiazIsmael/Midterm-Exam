@@ -7,7 +7,7 @@
             <form @submit.prevent="handleUpdateForm">
                 <div class="form-group">
                     <label>Location*</label>
-                    <input v-model="Location" type="location" class="form-control" required>
+                    <input v-model="location" type="text" class="form-control" required>
                 </div>
 
                 <div class="form-group">
