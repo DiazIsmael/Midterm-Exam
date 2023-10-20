@@ -4,26 +4,24 @@
             <h2 class="text-center">Weather Data</h2>
             <h5 class="text-center">Please fill in the form and use the submit button to load data.</h5>
             <!-- Weather Query Form -->
-            <form @submit.prevent="handleUpdateForm">
+            <form @submit.prevent="submitForm">
                 <div class="form-group">
                     <label>Location*</label>
                     <input v-model="location" type="text" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Query Start Date*</label>
+                    <label>Query Start Date* (Can only access last 7 days)</label>
                     <input v-model="startDate" type="date" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Query End Date (Can only access last 7 days)</label>
+                    <label>Query End Date</label>
                     <input v-model="endDate" type="date" class="form-control">
                 </div>
-
                 <button type="submit" class="btn btn-danger mt-3">Get Weather Data :D</button>
             </form>
-        </div>
-        <div class="col-md-6">
+            <!-- Weather Data Table Component -->
             <WeatherData v-if="weatherData" :data="weatherData" />
         </div>
     </div>
@@ -57,9 +55,8 @@ export default {
             'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
           },
         });
-
         this.weatherData = response.data;
-        console.log(response.data);
+        console.log('API Response:', this.weatherData);
       } 
       catch (error) {
         this.error = error;

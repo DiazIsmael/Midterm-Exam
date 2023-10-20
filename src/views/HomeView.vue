@@ -8,7 +8,7 @@ export default {
   },
   data() {
     return {
-      msg: "You really did it!"
+      msg: "Weather API Retrieval Application" // testing sending props and data through views/comps
     }
   }
 }

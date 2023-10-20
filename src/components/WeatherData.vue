@@ -1,31 +1,33 @@
 <template>
+    <hr class="hr" />
     <div>
-      <h2>Weather Data</h2>
-      <table>
-        <thead>
-          <tr>
-            <!-- Weather Info Variables -->
-            <th>Date</th>
-            <th>Temperature</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(entry, index) in data.forecast" :key="index">
-            <td>{{ entry.date }}</td>
-            <td>{{ entry.temp }}</td>
-          </tr>
-        </tbody>
-      </table>
+        <h4>{{ data.location.name }} Weather Data in a Table</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <!-- Weather Info Variables -->
+                <th>Date</th>
+                <th>Temperature (Celcius)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Vue Loops Through All Response Data Days -->
+                <tr v-for="(entry, index) in data.forecast.forecastday" :key="index">
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.day.avgtemp_c }}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   export default {
     props: {
-      data: {
-        type: Object,
-        required: true,
-      },
+        data: {
+            type: Object,
+            required: true,
+        },
     },
-  };
-  </script>
+};
+</script>
